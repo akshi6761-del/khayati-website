@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Khayati</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* BACKGROUND IMAGE */
+
+body{
+background:url("image1.jpeg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+}
+
+/* DARK OVERLAY */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:rgba(0,0,0,0.4);
+position:fixed;
+width:100%;
+z-index:10;
+}
+
+nav h2{
+color:#ff4d6d;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li{
+cursor:pointer;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:70px;
+text-shadow:
+0 0 10px #ff4d6d,
+0 0 20px #ff4d6d,
+0 0 40px #ff4d6d;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #ff4d6d;
+}
+to{
+text-shadow:0 0 30px #ff4d6d,0 0 60px #ff4d6d;
+}
+}
+
+/* SECTION */
+
+.section{
+padding:120px 20px;
+text-align:center;
+}
+
+/* IMAGE CARDS */
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.gallery img{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* APOLOGY */
+
+.apology p{
+text-align:left;
+font-size:20px;
+line-height:1.9;
+}
+
+/* BUTTON */
+
+button{
+margin-top:30px;
+padding:12px 35px;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+background:#ff4d6d;
+color:white;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+color:#ff4d6d;
+animation:float 6s linear infinite;
+opacity:0.6;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100vh);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>❤️ For Khayati</h2>
+
+<ul>
+<li onclick="scrollToSection('home')">Home</li>
+<li onclick="scrollToSection('about')">About</li>
+<li onclick="scrollToSection('memories')">Memories</li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<h1>A Little Something For You</h1>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+
+<h2>About You</h2>
+
+<div class="about-text">
+
+The most brilliant, all rounder (tareef nahi kar rahi sach bol rahi hu),
+bakchod insaan and most importantly the most humble and genuine person I have ever met...
+
+<br><br>
+
+Khayati, this is for you ❤️
+
+</div>
+
+<div class="gallery">
+
+<img src="image2.jpeg">
+
+<img src="image3.jpeg">
+
+</div>
+
+</section>
+
+<!-- APOLOGY -->
+
+<section class="section" id="memories">
+
+<div class="apology">
+
+<p>
+
+<div class="apology">
+
+<p>
+
+Dear Khayati...
+
+<br><br>
+
+I have learned something and that something is that you are my sister, maybe it's just a word but for me it's everything. I know everytime, I fuck up and this time it's huge. I know my mistakes can't be forgiven and yes you will never forgive me but please for the sake of whatever we have just for that forgive me.
+
+<br><br>
+
+I never met a person like you — same bakchodi level, birth time me 11 min ka difference, gotra se bhi behen hi lagti hai tu.
+
+<br><br>
+
+I don't know and I never force anyone to stay but this time I am gonna force you to stay.
+
+<br><br>
+
+So for the sake of little bit humanity, mujhe maaf kardo meri madammmm...
+
+<br><br>
+
+pleaseee ❤️
+
+</p>
+
+<div class="heart-btn" onclick="growHeart(this)">❤️</div>
+
+</div>
+</p>
+
+<button onclick="heartMessage()">Please Stay</button>
+
+</div>
+
+</section>
+
+<script>
+
+/* SMOOTH SCROLL */
+
+function scrollToSection(id){
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+})
+
+}
+
+/* BUTTON MESSAGE */
+
+function heartMessage(){
+
+alert("I Heart You ❤️")
+
+}
+
+/* FLOATING HEARTS */
+
+setInterval(()=>{
+
+const heart=document.createElement("div")
+
+heart.classList.add("heart")
+
+heart.innerHTML="❤️"
+
+heart.style.left=Math.random()*100+"%"
+
+heart.style.fontSize=(20+Math.random()*30)+"px"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},6000)
+
+},600)
+
+</script>
+
+</body>
+
+</html>
